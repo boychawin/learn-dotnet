@@ -1,0 +1,10 @@
+@jwt_auth_api_HostAddress = http://localhost:5233
+
+POST {{jwt_auth_api_HostAddress}}/Users/login/
+Accept: application/json
+{
+  "username": "string",
+  "password": "string"
+}
+
+###
