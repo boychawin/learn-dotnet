@@ -78,7 +78,6 @@ public class UserService : IUserService
 
         // Remove old refresh tokens
         removeOldRefreshTokens(user);
-
         // Save changes to the database
         _context.Update(user);
         try
@@ -87,6 +86,7 @@ public class UserService : IUserService
         }
         catch (DbUpdateException ex)
         {
+              Console.WriteLine(ex.InnerException?.Message);
             throw new AppException("Database update failed. See inner exception for details.", ex);
         }
 
