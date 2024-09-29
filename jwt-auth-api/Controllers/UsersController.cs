@@ -49,9 +49,6 @@ public class UsersController : ControllerBase
         return Ok(new { message = "Token revoked" });
     }
     
-    // Note: Used by the Angular Client to show all Users !
-    // TEST - Public Route for testing
-    // http://localhost:4000/users
     [AllowAnonymous]
     [HttpGet]
     public IActionResult GetAll()
@@ -63,36 +60,36 @@ public class UsersController : ControllerBase
      // TEST
     // Select all columns from the Account and the RefreshToken Table
     // http://localhost:4000/users/users-refresh-tokens-x
-    // [AllowAnonymous]
-    // [HttpGet("users-refresh-tokens-x")]
-    //  public IActionResult GetAllX()
-    //  {
-    //    // Not Mapping the Entity to Model
-    //     var users = _userService.GetAllX();
-    //     return Ok(users);
-    // }
+    [AllowAnonymous]
+    [HttpGet("users-refresh-tokens-x")]
+     public IActionResult GetAllX()
+     {
+       // Not Mapping the Entity to Model
+        var users = _userService.GetAllX();
+        return Ok(users);
+    }
 
     // // TEST 
     // // Select only specific columns from the Account Table and all columns from the Refresh Table
-    // // http://localhost:4000/users/users-refresh-tokens-y
-    // [AllowAnonymous]
-    // [HttpGet("users-refresh-tokens-y")]
-    // public IActionResult GetAllY()
-    // {
-    //     var users = _userService.GetAllY();
-    //     return Ok(users);
-    // }
+    // http://localhost:4000/users/users-refresh-tokens-y
+    [AllowAnonymous]
+    [HttpGet("users-refresh-tokens-y")]
+    public IActionResult GetAllY()
+    {
+        var users = _userService.GetAllY();
+        return Ok(users);
+    }
     
     // // TEST 
     // // Select only specific columns from the both Account and the Refresh Table
     // // http://localhost:4000/users/users-refresh-tokens-x
-    // [AllowAnonymous]
-    // [HttpGet("users-refresh-tokens-z")]
-    // public IActionResult GetAllZ()
-    // {
-    //     var users = _userService.GetAllZ();
-    //     return Ok(users);
-    // }
+    [AllowAnonymous]
+    [HttpGet("users-refresh-tokens-z")]
+    public IActionResult GetAllZ()
+    {
+        var users = _userService.GetAllZ();
+        return Ok(users);
+    }
 
     // TEST - Public Route for testing
     // http://localhost:4000/users/1

@@ -1,0 +1,6 @@
+@create_jwt_api_with_dotnet_HostAddress = http://localhost:5262
+
+GET {{create_jwt_api_with_dotnet_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
